@@ -1,8 +1,19 @@
-import React from 'react';
-import './app.sass';
+import { Toggle } from './components/toggle/Toggle';
+import { useThemeStore } from './stores/useThemeStore/useThemeStore';
+import './App.css';
 
 function App() {
-  return <div className='App'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, sapiente.</div>;
+  const { isDark, toggleDarkMode } = useThemeStore();
+
+  return (
+    <div className='App' data-theme={isDark ? 'dark' : 'light'}>
+      <Toggle isChecked={isDark} handleChange={toggleDarkMode} />
+      <h1 className='title'>Hello world!</h1>
+      <div className='box'>
+        <h2>This is a box</h2>
+      </div>
+    </div>
+  );
 }
 
 export default App;
