@@ -1,0 +1,49 @@
+.header {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_background {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--foreground-color);
+  margin-bottom: 3%;
+  padding: 20px 0px 10px 0px;
+}
+
+.header_title {
+  margin: 0;
+  color: var(--primary-text-color)
+}
+
+.header_link {
+  text-decoration: none;
+}
+
+.header_list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.add_new_week_button {
+  background-color: var(--toggle-bg);
+  border-radius: 24px;
+  color: var(--primary-text-color);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.add_new_week_button:hover {
+  background-color: var(--foreground-color);
+}

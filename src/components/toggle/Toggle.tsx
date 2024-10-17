@@ -1,16 +1,21 @@
 import React from 'react';
+import { ReactComponent as Sun } from '../.././svg/Sun.svg';
+import { ReactComponent as Moon } from '../.././svg/Moon.svg';
 import './toggle.css';
 
 interface Props {
-  handleChange: any;
+  handleChange: React.ChangeEventHandler;
   isChecked: boolean;
 }
 
 export const Toggle = ({ handleChange, isChecked }: Props) => {
   return (
-    <div className='toggle_container'>
-      <input type='checkbox' id='check' className='toggle' onChange={handleChange} checked={isChecked} />
-      <label htmlFor='check'>Dark Mode</label>
+    <div className='dark_mode'>
+      <input className='dark_mode_input' type='checkbox' id='darkmode-toggle' onChange={handleChange} checked={isChecked} />
+      <label className='dark_mode_label' htmlFor='darkmode-toggle'>
+        <Sun />
+        <Moon />
+      </label>
     </div>
   );
 };

@@ -1,12 +1,12 @@
-.App {
+.app {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: var(--background-color);
   transition: background-color 0.25s ease-in-out;
+}
+
+.main {
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
 .title {

@@ -1,16 +1,53 @@
-import { Toggle } from './components/toggle/Toggle';
 import { useThemeStore } from './stores/useThemeStore/useThemeStore';
-import './App.css';
+import { Header } from './ui/header/Header';
+import './app.css';
 
 function App() {
-  const { isDark, toggleDarkMode } = useThemeStore();
+  const { isDark } = useThemeStore();
 
   return (
-    <div className='App' data-theme={isDark ? 'dark' : 'light'}>
-      <Toggle isChecked={isDark} handleChange={toggleDarkMode} />
-      <h1 className='title'>Hello world!</h1>
-      <div className='box'>
-        <h2>This is a box</h2>
+    <div className='app' data-theme={isDark ? 'dark' : 'light'}>
+      <Header />
+      <div className='main'>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
+        <div className='box'>
+          <h2>This is a box</h2>
+        </div>
       </div>
     </div>
   );
