@@ -1,0 +1,11 @@
+.week_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.week_date {
+  color: var(--primary-text-color);
+  text-align: center;
+}
+

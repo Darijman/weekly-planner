@@ -1,0 +1,33 @@
+.week_day {
+  background-color: var(--foreground-color);
+  color: var(--primary-text-color);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 350px;
+}
+
+.day_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.day_title {
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.add_task_button {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
+  color: var(--primary-text-color);
+  cursor: pointer;
+  padding: 3px 10px;
+  font-size: 22px;
+}
+
+.add_task_button:hover {
+  background-color: var(--foreground-color);
+}

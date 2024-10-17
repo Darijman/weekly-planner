@@ -15,7 +15,7 @@ export const Header = () => {
           <ul className='header_list'>
             <li>
               <label style={{ cursor: 'pointer' }}>
-                <button className='add_new_week_button'>Add New Week</button>
+                <button className='add_new_week_button'>+ Next Week</button>
               </label>
             </li>
             <li>

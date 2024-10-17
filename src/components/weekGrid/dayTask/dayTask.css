@@ -1,0 +1,160 @@
+.day_task {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+  word-break: break-all;
+  max-width: 450px;
+  min-width: 150px;
+  min-height: 25px;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+}
+
+.task_info {
+  display: flex;
+  align-items: center;
+}
+
+.task_buttons {
+  display: none;
+}
+
+.day_task:hover .task_buttons {
+  display: flex;
+  align-items: center;
+}
+
+.task_title {
+  font-size: 17px;
+}
+
+.task_checkbox:checked + .task_title {
+  text-decoration: line-through;
+}
+
+.task_checkbox {
+  appearance: none;
+  min-width: 24px;
+  height: 24px;
+  margin: 0;
+  margin-right: 7px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: background-color 0.2s ease-in-out;
+  align-self: start;
+}
+
+.task_checkbox:checked {
+  background-color: var(--toggle-bg);
+  border-color: var(--toggle-bg);
+}
+
+.task_checkbox::before {
+  content: '✓';
+  font-size: 20px;
+  color: var(--primary-text-color);
+  display: none;
+}
+
+.task_checkbox:checked::before {
+  display: block;
+}
+
+.edit_button {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.edit_button.light-mode::after {
+  content: '';
+  background-image: url('../../../svg/edit-icon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.edit_button.light-mode:hover::after {
+  filter: invert(100%) sepia(0) saturate(0) hue-rotate(0deg) brightness(50%) contrast(50%);
+}
+
+.edit_button.dark-mode::after {
+  content: '';
+  background-image: url('../../../svg/edit-icon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+}
+
+.edit_button.dark-mode:hover::after {
+  filter: invert(100%) sepia(0) saturate(0) hue-rotate(0deg) brightness(50%) contrast(50%);
+}
+
+.delete_button {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.delete_button.light-mode::after {
+  content: '';
+  background-image: url('../../../svg/delete-icon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.delete_button.light-mode:hover::after {
+  filter: invert(100%) sepia(0) saturate(0) hue-rotate(0deg) brightness(50%) contrast(50%);
+}
+
+.delete_button.dark-mode::after {
+  content: '';
+  background-image: url('../../../svg/delete-icon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+}
+
+.delete_button.dark-mode:hover::after {
+  filter: invert(100%) sepia(0) saturate(0) hue-rotate(0deg) brightness(50%) contrast(50%);
+}
