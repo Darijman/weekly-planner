@@ -8,6 +8,7 @@
 .main {
   max-width: 1350px;
   margin: 0 auto;
+  padding-bottom: 5%;
 }
 
 .title {
@@ -20,4 +21,5 @@
   border-radius: 10px;
   background-color: var(--foreground-color);
   color: var(--primary-text-color);
+  text-align: center;
 }

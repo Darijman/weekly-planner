@@ -32,8 +32,11 @@
   list-style-type: none;
   display: flex;
   align-items: center;
-  padding: 0;
   margin: 0;
+}
+
+.header_list_item {
+  margin-right: 15px;
 }
 
 .add_new_week_button {

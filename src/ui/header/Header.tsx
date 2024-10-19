@@ -13,7 +13,7 @@ export const Header = () => {
         </a>
         <nav>
           <ul className='header_list'>
-            <li>
+            <li className='header_list_item'>
               <label style={{ cursor: 'pointer' }}>
                 <button className='add_new_week_button'>+ Next Week</button>
               </label>

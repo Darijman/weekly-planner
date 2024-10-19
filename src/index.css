@@ -6,8 +6,8 @@ body {
 }
 
 :root {
-  --background-color: #FFFFFF;
-  --foreground-color: #f0f0f0;
+  --background-color: #f0f0f0;
+  --foreground-color: #FFFFFF;
   --primary-text-color: #18191a;
   --secondary-text-color: #B0B3B8;
   --toggle-bg: #f0eb9d;

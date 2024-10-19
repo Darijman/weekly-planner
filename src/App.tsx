@@ -7,6 +7,7 @@ const task = {
   id: '1',
   title: 'Do the Math',
   scheduledTime: '12:50PM',
+  timeType: 'PM',
   finished: false,
   createdAt: new Date(),
   updatedAt: new Date(),
@@ -20,11 +21,9 @@ function App() {
       <Header />
       <div className='main'>
         <div className='box'>
-          <h2>This is a box</h2>
+          <h1>Select The Week</h1>
         </div>
-        <div>
-          <WeekGrid />
-        </div>
+        <WeekGrid />
       </div>
     </div>
   );
