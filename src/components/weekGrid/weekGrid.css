@@ -9,3 +9,59 @@
   text-align: center;
 }
 
+.box {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--foreground-color);
+  color: var(--primary-text-color);
+}
+
+.box_center {
+  text-align: center;
+}
+
+.week_selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.week_button {
+  padding: 10px;
+  margin-right: 35px;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
+  cursor: pointer;
+}
+
+.week_button:last-child {
+  margin-right: 0;
+}
+
+.week_button.active {
+  background-color: var(--toggle-bg);
+}
+
+.week_button:hover {
+  background-color: var(--foreground-color);
+}
+
+.select_week {
+  padding: 10px 25px;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
+  cursor: pointer;
+}
+
+.select_week:hover {
+  background-color: var(--foreground-color); 
+}
+
+.select_week:focus {
+  outline: none;
+  border-color: var(--focus-color)
+}

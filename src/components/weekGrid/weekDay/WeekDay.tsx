@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Task } from '../../../interfaces/Task';
 import { DayTask } from '../dayTask/DayTask';
 import { Week } from '../../../interfaces/Week';
 import { useThemeStore } from '../../../stores/useThemeStore/useThemeStore';
-import { getTimeIn24HourFormat } from '../WeekGrid';
+import { getTimeIn24HourFormat } from '../../../helpFunctions/getTimeIn24HourFormat';
 import { NewTaskForm } from '../../newTaskForm/NewTaskForm';
 import './weekDay.css';
 
@@ -14,6 +14,10 @@ export const WeekDay = ({ dayTasks, weekDay }: { dayTasks: Task[]; weekDay: keyo
 
   const [sortedTasks, setSortedTasks] = useState<Task[]>(dayTasks);
   const [sortBy, setSortBy] = useState<'SCHEDULEDTIME' | 'FINISHED'>('FINISHED');
+
+  useEffect(() => {
+    setSortedTasks(dayTasks);
+  }, [dayTasks]);
 
   const sortHandler = () => {
     const sorted = [...dayTasks].sort((a, b) => {

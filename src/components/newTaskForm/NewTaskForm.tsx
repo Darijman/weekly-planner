@@ -3,7 +3,7 @@ import { Task } from '../../interfaces/Task';
 import { nanoid } from 'nanoid';
 import { useWeeksStore } from '../../stores/useWeeksStore/useWeeksStore';
 import { Week } from '../../interfaces/Week';
-import { getTimeIn24HourFormat } from '../weekGrid/WeekGrid';
+import { getTimeIn24HourFormat } from '../../helpFunctions/getTimeIn24HourFormat';
 import './newTaskForm.css';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTaskForm }: Props) => {
-  const { addTaskToDay } = useWeeksStore();
+  const { addTaskToDay, setWeeks, currentWeek, weeks } = useWeeksStore();
   const [newTask, setNewTask] = useState<Task>({
     id: nanoid(),
     title: '',
@@ -56,7 +56,6 @@ export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTa
 
     setShowNewTaskForm(false);
     setSortedTasks(updatedSortedTasks);
-
     setNewTask({
       id: nanoid(),
       title: '',
@@ -64,6 +63,20 @@ export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTa
       timeType: 'PM',
       finished: false,
     });
+
+    const weekToUpdate = weeks.find((value) => value.id === currentWeek.id);
+    if (!weekToUpdate) return;
+
+    const updatedWeek = {
+      ...weekToUpdate,
+      days: {
+        ...weekToUpdate.days,
+        [weekDay]: [...weekToUpdate.days[weekDay], newTask],
+      },
+    };
+
+    const newWeeks = weeks.map((week) => (week.id === updatedWeek.id ? updatedWeek : week));
+    setWeeks(newWeeks);
   };
 
   const timeType = Number(newTask.scheduledTime.slice(0, 2)) < 12 ? ':AM' : ':PM';

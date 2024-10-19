@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { Task } from '../../interfaces/Task';
 import { nanoid } from 'nanoid';
 import { useWeeksStore } from '../../stores/useWeeksStore/useWeeksStore';
-import { getTimeIn24HourFormat } from '../weekGrid/WeekGrid';
+import { getTimeIn24HourFormat } from '../../helpFunctions/getTimeIn24HourFormat';
 import './editTaskForm.css';
 
 interface Props {
@@ -39,7 +39,6 @@ export const EditTaskForm = ({ setSortedTasks, sortedTasks, setShowEditForm, sho
 
   const editTaskConfirmHandler = (event: FormEvent) => {
     event.preventDefault();
-
     editTask(id, newTask);
 
     const remainingTasks = sortedTasks.filter((task) => task.id !== id);

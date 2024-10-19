@@ -10,9 +10,6 @@ function App() {
     <div className='app' data-theme={isDark ? 'dark' : 'light'}>
       <Header />
       <div className='main'>
-        <div className='box'>
-          <h1>Select The Week</h1>
-        </div>
         <WeekGrid />
       </div>
     </div>
