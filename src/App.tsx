@@ -3,16 +3,6 @@ import { Header } from './ui/header/Header';
 import { WeekGrid } from './components/weekGrid/WeekGrid';
 import './app.css';
 
-const task = {
-  id: '1',
-  title: 'Do the Math',
-  scheduledTime: '12:50PM',
-  timeType: 'PM',
-  finished: false,
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-
 function App() {
   const { isDark } = useThemeStore();
 

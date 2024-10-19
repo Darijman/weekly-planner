@@ -1,0 +1,64 @@
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--foreground-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: auto;
+  min-height: 100px;
+  position: relative;
+}
+
+.modal_title {
+  margin-top: 30px;
+}
+
+.close_modal_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--primary-text-color);
+}
+
+.modal_content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.confirm_button {
+  color: #c30a0a;
+  background-color: var(--background-color);
+  padding: 10px 25px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #c30a0a;
+}
+
+.decline_button {
+  color: #1ff242;
+  background-color: var(--background-color);
+  padding: 10px 25px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #1ff242;
+}

@@ -3,6 +3,7 @@ import { Task } from '../../../interfaces/Task';
 import { useThemeStore } from '../../../stores/useThemeStore/useThemeStore';
 import { useWeeksStore } from '../../../stores/useWeeksStore/useWeeksStore';
 import { EditTaskForm } from '../../editTaskForm/EditTaskForm';
+import { Modal } from '../../../ui/modal/Modal';
 import './dayTask.css';
 
 interface Props {
@@ -17,12 +18,14 @@ export const DayTask = ({ task, setSortedTasks, sortedTasks }: Props) => {
   const { id, title, scheduledTime, timeType } = task;
 
   const [showEditForm, setShowEditForm] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const deleteTaskHandler = (taskId: string) => {
     deleteTask(taskId);
 
     const newTasks = sortedTasks.filter((task) => task.id !== taskId);
     setSortedTasks(newTasks);
+    setShowModal(false);
   };
 
   const finishTaskHandler = (taskId: string) => {
@@ -56,10 +59,16 @@ export const DayTask = ({ task, setSortedTasks, sortedTasks }: Props) => {
               onClick={() => setShowEditForm(!showEditForm)}
               className={`edit_button ${isDark ? 'dark-mode' : 'light-mode'}`}
             />
-            <button title='Delete' onClick={() => deleteTaskHandler(id)} className={`delete_button ${isDark ? 'dark-mode' : 'light-mode'}`} />
+            <button title='Delete' onClick={() => setShowModal(true)} className={`delete_button ${isDark ? 'dark-mode' : 'light-mode'}`} />
           </div>
         </div>
       )}
+      <Modal
+        title='Do you really wanna delete this task?'
+        onYes={() => deleteTaskHandler(id)}
+        onNo={() => setShowModal(false)}
+        showModal={showModal}
+      />
     </>
   );
 };
