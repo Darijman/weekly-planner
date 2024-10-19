@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Task } from '../../interfaces/Task';
 import { nanoid } from 'nanoid';
 import { useWeeksStore } from '../../stores/useWeeksStore/useWeeksStore';
@@ -21,8 +21,6 @@ export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTa
     scheduledTime: '',
     timeType: 'PM',
     finished: false,
-    createdAt: new Date(),
-    updatedAt: new Date(),
   });
 
   const timeOnChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +36,8 @@ export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTa
     }));
   };
 
-  const addNewTaskConfirmHandler = () => {
+  const addNewTaskConfirmHandler = (event: FormEvent) => {
+    event.preventDefault();
     addTaskToDay(newTask, weekDay);
 
     const newTaskTime = getTimeIn24HourFormat(newTask);
@@ -64,8 +63,6 @@ export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTa
       scheduledTime: '',
       timeType: 'PM',
       finished: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
     });
   };
 
@@ -74,22 +71,30 @@ export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTa
 
   return (
     <div>
-      <div>
-        <input className='new_task_time_input' placeholder='Time' type='time' onChange={timeOnChangeHandler} value={newTask.scheduledTime} />
-        <span>{timeType}</span>
-        <div className='new_task_bottom'>
+      <form>
+        <div>
           <input
-            className='new_task_value_input'
-            placeholder='Task'
-            type='text'
-            onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-            value={newTask.title}
+            className='new_task_time_input'
+            placeholder='Time'
+            type='time'
+            onChange={timeOnChangeHandler}
+            value={newTask.scheduledTime}
           />
-          <button className='new_task_confirm_button' disabled={confirmButtonDisabled} onClick={addNewTaskConfirmHandler}>
-            Confirm
-          </button>
+          <span>{timeType}</span>
+          <div className='new_task_bottom'>
+            <input
+              className='new_task_value_input'
+              placeholder='Task'
+              type='text'
+              onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+              value={newTask.title}
+            />
+            <button type='submit' className='new_task_confirm_button' disabled={confirmButtonDisabled} onClick={addNewTaskConfirmHandler}>
+              Confirm
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

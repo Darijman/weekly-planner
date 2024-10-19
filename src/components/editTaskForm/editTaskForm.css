@@ -1,0 +1,75 @@
+.close_task_button {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
+  color: var(--primary-text-color);
+  cursor: pointer;
+  padding: 3px 10px;
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.close_task_button:hover {
+  background-color: var(--foreground-color);
+}
+
+.edit_task_value_input {
+  background-color: var(--foreground-color);
+  border: 2px solid var(--toggle-bg);
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  padding: 7px;
+  width: 100%;
+  outline: none;
+}
+
+.edit_task_value_input:focus {
+  border-color: var(--secondary-text-color);
+}
+
+.edit_task_time_input {
+  background-color: var(--foreground-color);
+  color: var(--primary-text-color);
+  border: 2px solid var(--toggle-bg);
+  border-radius: 10px;
+  padding: 7px;
+  width: 80px;
+  margin-right: 5px;
+  outline: none;
+}
+
+.edit_task_time_input::-webkit-calendar-picker-indicator {
+  background-color: var(--toggle-bg);
+  border-radius: 50%;
+}
+
+.edit_task_time_input:focus {
+  border-color: var(--secondary-text-color);
+}
+
+.edit_task_confirm_button {
+  background-color: var(--toggle-bg);
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  border: 2px solid var(--toggle-bg);
+  padding: 7px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.edit_task_confirm_button:hover {
+  background-color: var(--foreground-color);
+}
+
+.edit_task_bottom {
+  margin-top: 10px;
+  display: flex;
+  justify-content: 'space-between';
+  align-items: center;
+}
+
+.edit_task_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

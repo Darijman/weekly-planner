@@ -11,6 +11,7 @@ interface WeeksState {
   addTaskToDay: (task: Task, day: keyof Week['days']) => void;
   deleteTask: (taskId: string) => void;
   finishTask: (taskId: string) => void;
+  editTask: (taskId: string, updatedTask: Task) => void;
 }
 
 export const useWeeksStore = create<WeeksState>()(
@@ -65,6 +66,22 @@ export const useWeeksStore = create<WeeksState>()(
             Object.entries(state.currentWeek.days).map(([day, tasks]) => [
               day,
               tasks.map((task) => (task.id === taskId ? { ...task, finished: !task.finished } : task)),
+            ]),
+          ) as Week['days'];
+
+          return {
+            currentWeek: {
+              ...state.currentWeek,
+              days: updatedDays,
+            },
+          };
+        }),
+      editTask: (taskId: string, updatedTask: Partial<Task>) =>
+        set((state) => {
+          const updatedDays = Object.fromEntries(
+            Object.entries(state.currentWeek.days).map(([currentDay, tasks]) => [
+              currentDay,
+              tasks.map((task) => (task.id === taskId ? { ...task, ...updatedTask } : task)),
             ]),
           ) as Week['days'];
 

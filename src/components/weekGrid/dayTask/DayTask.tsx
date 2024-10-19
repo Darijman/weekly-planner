@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Task } from '../../../interfaces/Task';
 import { useThemeStore } from '../../../stores/useThemeStore/useThemeStore';
 import { useWeeksStore } from '../../../stores/useWeeksStore/useWeeksStore';
+import { EditTaskForm } from '../../editTaskForm/EditTaskForm';
 import './dayTask.css';
 
 interface Props {
@@ -34,26 +35,13 @@ export const DayTask = ({ task, setSortedTasks, sortedTasks }: Props) => {
   return (
     <>
       {showEditForm ? (
-        <div>
-          <input
-            className='new_task_time_input'
-            placeholder='Time'
-            type='time'
-            // onChange={timeOnChangeHandler}
-            // value={newTask.scheduledTime}
-          />
-          <span>{timeType}</span>
-          <div className='new_task_bottom'>
-            <input
-              className='new_task_value_input'
-              placeholder='Task'
-              type='text'
-              // onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-              // value={newTask.title}
-            />
-            <button className='new_task_confirm_button'>Confirm</button>
-          </div>
-        </div>
+        <EditTaskForm
+          task={task}
+          setSortedTasks={setSortedTasks}
+          sortedTasks={sortedTasks}
+          setShowEditForm={setShowEditForm}
+          showEditForm={showEditForm}
+        />
       ) : (
         <div className='day_task'>
           <div className='task_info'>

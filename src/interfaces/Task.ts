@@ -4,6 +4,4 @@ export interface Task {
   scheduledTime: string;
   timeType: 'PM' | 'AM';
   finished: boolean;
-  createdAt: Date;
-  updatedAt: Date;
 }
