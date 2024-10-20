@@ -1,0 +1,109 @@
+.show_all_weeks_container {
+  color: var(--primary-text-color);
+  background-color: var(--foreground-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.all_weeks_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0px 0px 0px;
+}
+
+.all_weeks_title {
+  margin: 0px 10px 0px 0px;
+  text-align: center;
+  text-transform: capitalize;
+  flex-grow: 1;
+}
+
+.weeks_list_item {
+  margin-bottom: 15px;
+  background-color: var(--background-color);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.weeks_list_item:hover {
+  background-color: var(--toggle-bg);
+}
+
+.weeks_list_item.active {
+  background-color: var(--toggle-bg);
+  cursor: default;
+}
+
+.weeks_list_item:last-child {
+  margin-bottom: 0px;
+}
+
+.weeks_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hide_weeks_button {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
+  color: var(--primary-text-color);
+  cursor: pointer;
+  padding: 3px 10px;
+  font-size: 22px;
+}
+
+.hide_weeks_button:hover {
+  background-color: var(--foreground-color);
+}
+
+.delete_week_button {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.delete_week_button.light-mode::after {
+  content: '';
+  background-image: url('../../svg/delete-icon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.delete_week_button.light-mode:hover::after {
+  filter: invert(100%) sepia(0) saturate(0) hue-rotate(0deg) brightness(50%) contrast(50%);
+}
+
+.delete_week_button.dark-mode::after {
+  content: '';
+  background-image: url('../../svg/delete-icon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+}
+
+.delete_week_button.dark-mode:hover::after {
+  filter: invert(100%) sepia(0) saturate(0) hue-rotate(0deg) brightness(50%) contrast(50%);
+}

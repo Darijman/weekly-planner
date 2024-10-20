@@ -65,3 +65,29 @@
   outline: none;
   border-color: var(--focus-color)
 }
+
+.show_all_weeks_button {
+  background-color: var(--foreground-color);
+  color: var(--primary-text-color);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0;
+  border: 2px solid var(--background-color);
+}
+
+.first_six_weeks_list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.first_six_weeks_list_item {
+  margin-right: 20px;
+}
+
+.first_six_weeks_list_item:last-child {
+  margin-right: 0px;
+}

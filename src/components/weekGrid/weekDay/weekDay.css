@@ -3,7 +3,6 @@
   color: var(--primary-text-color);
   padding: 20px;
   border-radius: 10px;
-  max-width: 350px;
 }
 
 .day_top {
@@ -62,5 +61,19 @@
 }
 
 .sort_button:hover {
+  background-color: var(--foreground-color);
+}
+
+.add_task_button {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  border: 2px solid var(--background-color);
+  color: var(--primary-text-color);
+  cursor: pointer;
+  padding: 3px 10px;
+  font-size: 22px;
+}
+
+.add_task_button:hover {
   background-color: var(--foreground-color);
 }

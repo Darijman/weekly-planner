@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Toggle } from '../../components/toggle/Toggle';
 import { useThemeStore } from '../../stores/useThemeStore/useThemeStore';
 import { useWeeksStore } from '../../stores/useWeeksStore/useWeeksStore';
@@ -9,6 +10,7 @@ import './header.css';
 export const Header = () => {
   const { isDark, toggleDarkMode } = useThemeStore();
   const { currentWeek, setCurrentWeek, weeks, setWeeks } = useWeeksStore();
+  const [successMessage, setSuccessMessage] = useState('');
 
   const addNewWeekHandler = () => {
     const currentStartDate = new Date(currentWeek.weekStartDate);
@@ -37,6 +39,11 @@ export const Header = () => {
 
     setWeeks([...weeks, newWeek]);
     setCurrentWeek(newWeek);
+    setSuccessMessage('✓');
+
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 1000);
   };
 
   return (
@@ -52,6 +59,7 @@ export const Header = () => {
                 <button className='add_new_week_button' onClick={addNewWeekHandler}>
                   + Next Week
                 </button>
+                {successMessage && <div className='success-message'>{successMessage}</div>}
               </label>
             </li>
             <li>

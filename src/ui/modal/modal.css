@@ -53,12 +53,12 @@
 }
 
 .decline_button {
-  color: #58b367;
+  color: var(--primary-text-color);
   background-color: var(--background-color);
   padding: 10px 25px;
   margin: 10px 0px 10px 0px;
   border-radius: 10px;
   cursor: pointer;
   background: none;
-  border: 2px solid #58b367;
+  border: 2px solid var(--primary-text-color);
 }

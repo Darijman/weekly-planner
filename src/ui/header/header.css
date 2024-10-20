@@ -37,6 +37,7 @@
 
 .header_list_item {
   margin-right: 15px;
+  position: relative;
 }
 
 .add_new_week_button {
@@ -51,3 +52,16 @@
 .add_new_week_button:hover {
   background-color: var(--foreground-color);
 }
+
+.success-message {
+  margin-top: 10px;
+  color: var(--primary-text-color);
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--background-color);
+  border: 2px solid var(--primary-text-color);
+  border-radius: 10px;
+  padding: 6px 8px;
+} 

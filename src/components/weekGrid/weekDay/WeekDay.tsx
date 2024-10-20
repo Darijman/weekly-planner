@@ -11,7 +11,6 @@ export const WeekDay = ({ dayTasks, weekDay }: { dayTasks: Task[]; weekDay: keyo
   const { isDark } = useThemeStore();
 
   const [showNewTaskForm, setShowNewTaskForm] = useState<boolean>(false);
-
   const [sortedTasks, setSortedTasks] = useState<Task[]>(dayTasks);
   const [sortBy, setSortBy] = useState<'SCHEDULEDTIME' | 'FINISHED'>('FINISHED');
 
@@ -41,7 +40,11 @@ export const WeekDay = ({ dayTasks, weekDay }: { dayTasks: Task[]; weekDay: keyo
       <div className='day_top'>
         <button className={`sort_button ${isDark ? 'dark-mode' : 'light-mode'}`} disabled={sortButtonDisabled} onClick={sortHandler} />
         <h3 className='day_title'>{weekDay}</h3>
-        <button onClick={() => setShowNewTaskForm(!showNewTaskForm)} className='add_task_button'>
+        <button
+          onClick={() => setShowNewTaskForm(!showNewTaskForm)}
+          className='add_task_button'
+          title={!showNewTaskForm ? 'Add New Task' : 'Cancel'}
+        >
           {showNewTaskForm ? '-' : '+'}
         </button>
       </div>
