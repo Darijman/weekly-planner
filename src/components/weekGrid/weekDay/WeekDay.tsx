@@ -16,7 +16,7 @@ export const WeekDay = ({ dayTasks, weekDay }: { dayTasks: Task[]; weekDay: keyo
   const [sortBy, setSortBy] = useState<'SCHEDULEDTIME' | 'FINISHED'>('FINISHED');
 
   useEffect(() => {
-    setSortedTasks(dayTasks);
+    setSortedTasks([...dayTasks]);
   }, [dayTasks]);
 
   const sortHandler = () => {

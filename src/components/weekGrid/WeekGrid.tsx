@@ -11,8 +11,10 @@ export const WeekGrid = () => {
   const daysArray = Object.entries(currentWeek.days) as [keyof Week['days'], Week['days'][keyof Week['days']]][];
   const dateRange = formatDateRange(currentWeek.weekStartDate, currentWeek.weekEndDate);
 
-  const handleWeekChange = (week: Week) => {
-    setCurrentWeek(week);
+  const handleWeekChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedWeekId = event.target.value;
+    const selectedWeek = weeks.find((week) => week.id === selectedWeekId);
+    if (selectedWeek) setCurrentWeek(selectedWeek);
   };
 
   const firstSixWeeks = weeks?.slice(0, 6);
@@ -24,43 +26,42 @@ export const WeekGrid = () => {
       <div className='box'>
         <div className='box_center'>
           <h1>Select The Week</h1>
-          <select className='select_week'>
-            {weeks.map((week, index) => {
+          <select className='select_week' onChange={handleWeekChange} value={currentWeek.id}>
+            {weeks.map((week) => {
               const date = formatDateRange(week.weekStartDate, week.weekEndDate);
-
               return (
-                <option className='select_week_option' key={index} label={date}>
+                <option className='select_week_option' key={week.id} value={week.id}>
                   {date}
                 </option>
               );
             })}
           </select>
         </div>
+
         <div className='week_selector'>
           <div className='first_three_weeks'>
             {firstThreeWeeks.map((week) => {
               const date = formatDateRange(week.weekStartDate, week.weekEndDate);
-
               return (
                 <button
                   key={week.id}
                   className={`week_button ${currentWeek.id === week.id ? 'active' : ''}`}
-                  onClick={() => handleWeekChange(week)}
+                  onClick={() => setCurrentWeek(week)}
                 >
                   {date}
                 </button>
               );
             })}
           </div>
+
           <div className='second_three_weeks'>
             {secondThreeWeeks.map((week) => {
               const date = formatDateRange(week.weekStartDate, week.weekEndDate);
-
               return (
                 <button
                   key={week.id}
                   className={`week_button ${currentWeek.id === week.id ? 'active' : ''}`}
-                  onClick={() => handleWeekChange(week)}
+                  onClick={() => setCurrentWeek(week)}
                 >
                   {date}
                 </button>

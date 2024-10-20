@@ -17,8 +17,8 @@ export const DayTask = ({ task, setSortedTasks, sortedTasks }: Props) => {
   const { deleteTask, finishTask } = useWeeksStore();
   const { id, title, scheduledTime, timeType } = task;
 
-  const [showEditForm, setShowEditForm] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState<boolean>(false);
+  const [showEditForm, setShowEditForm] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const deleteTaskHandler = (taskId: string) => {
     deleteTask(taskId);

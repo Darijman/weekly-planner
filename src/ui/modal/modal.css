@@ -42,23 +42,23 @@
 }
 
 .confirm_button {
-  color: #c30a0a;
+  color: #f86c6b;
   background-color: var(--background-color);
   padding: 10px 25px;
   margin: 10px 0px 10px 0px;
   border-radius: 10px;
   cursor: pointer;
   background: none;
-  border: 2px solid #c30a0a;
+  border: 2px solid #f86c6b;
 }
 
 .decline_button {
-  color: #1ff242;
+  color: #58b367;
   background-color: var(--background-color);
   padding: 10px 25px;
   margin: 10px 0px 10px 0px;
   border-radius: 10px;
   cursor: pointer;
   background: none;
-  border: 2px solid #1ff242;
+  border: 2px solid #58b367;
 }

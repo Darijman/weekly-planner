@@ -53,37 +53,45 @@ export const useWeeksStore = create<WeeksState>()(
             ]),
           ) as Week['days'];
 
+          const updatedCurrentWeek = {
+            ...state.currentWeek,
+            days: updatedDays,
+          };
+
+          const updatedWeeks = state.weeks.map((week) => (week.id === state.currentWeek.id ? updatedCurrentWeek : week));
+
           return {
-            currentWeek: {
-              ...state.currentWeek,
-              days: updatedDays,
-            },
+            currentWeek: updatedCurrentWeek,
+            weeks: updatedWeeks,
           };
         }),
       finishTask: (taskId: string) =>
         set((state) => {
-          const updatedDays = Object.fromEntries(
-            Object.entries(state.currentWeek.days).map(([day, tasks]) => [
-              day,
-              tasks.map((task) => (task.id === taskId ? { ...task, finished: !task.finished } : task)),
-            ]),
-          ) as Week['days'];
+          const updatedDays: Week['days'] = { ...state.currentWeek.days };
+
+          for (const day of Object.keys(updatedDays) as (keyof Week['days'])[]) {
+            updatedDays[day] = updatedDays[day].map((task) => (task.id === taskId ? { ...task, finished: !task.finished } : task));
+          }
+
+          const updatedCurrentWeek = {
+            ...state.currentWeek,
+            days: updatedDays,
+          };
+
+          const updatedWeeks = state.weeks.map((week) => (week.id === state.currentWeek.id ? updatedCurrentWeek : week));
 
           return {
-            currentWeek: {
-              ...state.currentWeek,
-              days: updatedDays,
-            },
+            currentWeek: updatedCurrentWeek,
+            weeks: updatedWeeks,
           };
         }),
       editTask: (taskId: string, updatedTask: Partial<Task>) =>
         set((state) => {
-          const updatedDays = Object.fromEntries(
-            Object.entries(state.currentWeek.days).map(([currentDay, tasks]) => [
-              currentDay,
-              tasks.map((task) => (task.id === taskId ? { ...task, ...updatedTask } : task)),
-            ]),
-          ) as Week['days'];
+          const updatedDays: Week['days'] = { ...state.currentWeek.days };
+
+          for (const day of Object.keys(updatedDays) as (keyof Week['days'])[]) {
+            updatedDays[day] = updatedDays[day].map((task) => (task.id === taskId ? { ...task, ...updatedTask } : task));
+          }
 
           return {
             currentWeek: {
