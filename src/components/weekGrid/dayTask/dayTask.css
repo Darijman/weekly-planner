@@ -5,7 +5,7 @@
   color: var(--primary-text-color);
   background-color: var(--background-color);
   word-break: break-all;
-  max-width: 450px;
+  max-width: 100%;
   min-width: 150px;
   min-height: 25px;
   padding: 10px;
@@ -157,4 +157,26 @@
 
 .delete_button.dark-mode:hover::after {
   filter: invert(100%) sepia(0) saturate(0) hue-rotate(0deg) brightness(50%) contrast(50%);
+}
+
+@media screen and ( max-width: 1050px ) {
+  .task_buttons {
+    display: flex;
+  }
+}
+
+@media screen and ( max-width: 250px ) {
+  .day_task {
+    width: 110px;
+    min-width: 0;
+    flex-direction: column;
+  }
+
+  .task_buttons {
+    margin-top: 20px;
+  }
+
+  .delete_button {
+    margin-left: 40px;
+  }
 }

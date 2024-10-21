@@ -62,7 +62,7 @@ export const Header = () => {
                 {successMessage && <div className='success-message'>{successMessage}</div>}
               </label>
             </li>
-            <li>
+            <li className='header_list_toggle'>
               <label style={{ cursor: 'pointer' }}>
                 <Toggle isChecked={isDark} handleChange={toggleDarkMode} />
               </label>

@@ -73,3 +73,39 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@media screen and (max-width: 250px) {
+  .edit_task_top {
+    flex-direction: column;
+  }
+
+  .edit_task_value_input {
+    width: 110px;
+    margin-bottom: 10px;
+  }
+
+  .edit_task_bottom {
+    flex-direction: column;
+  }
+
+  .edit_time_type {
+    font-size: 14px;
+  }
+
+  .edit_task_confirm_button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .close_task_button {
+    padding: 3px 5px;
+  }
+
+  .edit_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+}

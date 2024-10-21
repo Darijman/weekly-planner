@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { formatDateRange } from '../../helpFunctions/formatDateRange';
 import { useThemeStore } from '../../stores/useThemeStore/useThemeStore';
 import { useWeeksStore } from '../../stores/useWeeksStore/useWeeksStore';
-import './showAllWeeks.css';
 import { Modal } from '../../ui/modal/Modal';
+import './showAllWeeks.css';
 
 interface Props {
   showAllWeeks: boolean;
@@ -17,7 +17,7 @@ export const ShowAllWeeks = ({ showAllWeeks, setShowAllWeeks }: Props) => {
   const [weekIdToDelete, setWeekIdToDelete] = useState<string>('');
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const showModalHandler = (event: any, weekId: string) => {
+  const showModalHandler = (event: React.MouseEvent<HTMLButtonElement>, weekId: string) => {
     event.stopPropagation();
     setWeekIdToDelete(weekId);
     setShowModal(true);
@@ -53,7 +53,7 @@ export const ShowAllWeeks = ({ showAllWeeks, setShowAllWeeks }: Props) => {
                     className={`weeks_list_item ${currentWeek.id === week.id ? 'active' : ''}`}
                     key={index}
                   >
-                    <span>{date}</span>
+                    <span className='week_dates'>{date}</span>
                     <button
                       className={`delete_week_button ${isDark ? 'dark-mode' : 'light-mode'}`}
                       onClick={(event) => showModalHandler(event, week.id)}

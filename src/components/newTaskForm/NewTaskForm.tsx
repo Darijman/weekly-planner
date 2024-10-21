@@ -93,7 +93,7 @@ export const NewTaskForm = ({ weekDay, setSortedTasks, sortedTasks, setShowNewTa
             onChange={timeOnChangeHandler}
             value={newTask.scheduledTime}
           />
-          <span>{timeType}</span>
+          <span className='new_task_time_type'>{timeType}</span>
           <div className='new_task_bottom'>
             <input
               className='new_task_value_input'

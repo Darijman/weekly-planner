@@ -56,3 +56,23 @@
   justify-content: 'space-between';
   align-items: center;
 }
+
+@media screen and (max-width: 250px) {
+  .new_task_time_type {
+    font-size: 14px;
+  }
+
+  .new_task_value_input {
+    width: 110px;
+    margin-bottom: 10px;
+  }
+
+  .new_task_bottom {
+    flex-direction: column;
+  }
+
+  .new_task_confirm_button {
+    width: 100%;
+    margin-left: 0;
+  }
+}

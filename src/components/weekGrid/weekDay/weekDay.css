@@ -77,3 +77,41 @@
 .add_task_button:hover {
   background-color: var(--foreground-color);
 }
+
+@media screen and ( max-width: 1050px ) {
+  .week_day {
+    padding: 15px;
+  }
+}
+
+@media screen and ( max-width: 210px ) {
+  .week_day {
+    padding: 5px;
+  }
+
+  .day_title {
+    font-size: 16px;
+    margin: 0px;
+  }
+
+  .day_top {
+    justify-content: space-around;
+  }
+
+  .add_task_button {
+    padding: 3px 5px;
+    margin-left: -10px;
+  }
+
+  .sort_button {
+    padding: 10px 10px;
+  }
+
+  .sort_button.light-mode::after {
+    left: 3px;
+  }
+
+  .sort_button.dark-mode::after {
+    left: 3px;
+  }
+}

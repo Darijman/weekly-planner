@@ -28,7 +28,7 @@ export const WeekGrid = () => {
     <div>
       <div className='box'>
         <div className='box_center'>
-          <h1>Select The Week</h1>
+          <h1 className='box_title'>Select The Week</h1>
           <select className='select_week' onChange={handleWeekChange} value={currentWeek.id}>
             {weeks.map((week) => {
               const date = formatDateRange(week.weekStartDate, week.weekEndDate);
@@ -55,7 +55,7 @@ export const WeekGrid = () => {
             })}
           </ul>
 
-          <ul className='first_six_weeks_list'>
+          <ul className='second_six_weeks_list'>
             {secondThreeWeeks.map((week) => {
               const date = formatDateRange(week.weekStartDate, week.weekEndDate);
               return (

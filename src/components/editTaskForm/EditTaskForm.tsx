@@ -82,10 +82,10 @@ export const EditTaskForm = ({ setSortedTasks, sortedTasks, setShowEditForm, sho
               onChange={timeOnChangeHandler}
               value={newTask.scheduledTime}
             />
-            <span>{timeTypeShow}</span>
+            <span className='edit_time_type'>{timeTypeShow}</span>
           </div>
-          <div>
-            <span>Edit</span>
+          <div className='edit_info'>
+            <span className='edit_title'>Edit</span>
             <button onClick={() => setShowEditForm(!showEditForm)} className='close_task_button'>
               {showEditForm ? '-' : '+'}
             </button>
