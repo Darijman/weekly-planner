@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+## Weekly-Planner - A planner that helps to remember all your tasks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Weekly-Planner is a simple planner that allows you to organize your weeks. It is built using:
 
-## Available Scripts
+- React
+- TypeScript
+- Css
+- Nanoid (for id)
 
-In the project directory, you can run:
+## 👾 Features
 
-### `npm start`
+- Jump between dark-light modes.
+- Add weeks and tasks.
+- Sort tasks by finished status or by time, as you desire.
+- Delete tasks and weeks.
+- Edit tasks, their time and tasks title.
+- Indication of which week you are currently in.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📒 Process
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I started by creating dark-light mode. 
 
-### `npm test`
+Then I added tasks and ability to delete it. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I Also added the ability to sort tasks in the day. At first they're always sorted by time, you can also sort them by finished status.
+They will be sorted by finished status at first, and their time as well.
 
-### `npm run build`
+Subsequently, I added 2 forms for editing task and creating task.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After that, I added a modal to confirm the deletion of a task or a week.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**NOTE:** The project's purpose is to test zustand and try to make dark-light mode.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚦 Running the Project
 
-### `npm run eject`
+To run the project in your local environment, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone the repository to your local machine.
+2. Run `npm install` or `yarn` in the project directory to install the required dependencies.
+3. Run `npm run start` or `yarn start` to get the project started.
+4. Open [http://localhost:3000](http://localhost:3000) (or the address shown in your console) in your web browser to view the app.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📹 Video
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+https://github.com/mirayatech/drag-track/assets/71933266/bee55318-f365-4028-9003-c06db8567a53
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
