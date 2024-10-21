@@ -42,6 +42,6 @@ To run the project in your local environment, follow these steps:
 
 ## 📹 Video
 
-https://github.com/mirayatech/drag-track/assets/71933266/bee55318-f365-4028-9003-c06db8567a53
+https://github.com/user-attachments/assets/365734fd-55d6-40a4-b99f-5843521aa6e3
 
 
